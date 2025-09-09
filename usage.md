@@ -1,3 +1,5 @@
 # Présentation SAE51
 
-<u>Antoine Letourneur & Thomas Dehais</u>
+Antoine Letourneur & Thomas Dehais
+
+BUT RT-2025/2026
