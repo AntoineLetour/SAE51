@@ -1,5 +1,9 @@
 RAM=4096
 DISK=64000
+ACTION=$1
+VMNAME=$2
+VMDISK="$HOME/VirtualBox VMs/$VMNAME/$VMNAME.vdi"
+
 
 if [ $# -lt 1 ]; then
     echo "  L : Lister l’ensemble des machines enregistrées"
@@ -10,15 +14,13 @@ if [ $# -lt 1 ]; then
     exit 1
 fi
 
-ACTION=$1
-VMNAME=$2
+
 
 case "$ACTION" in
     L)
         echo "Liste des VMs :" VBoxManage list vms
         ;;
     N)
-        VMDISK="$HOME/VirtualBox VMs/$VMNAME/$VMNAME.vdi"
 
         if VBoxManage list vms | grep -q "\"$VMNAME\""; then
             VBoxManage unregistervm "$VMNAME" --delete > /dev/null
@@ -30,7 +32,7 @@ case "$ACTION" in
         VBoxManage storagectl "$VMNAME" --name "SATA Controller" --add sata --controller IntelAhci > /dev/null
         VBoxManage storageattach "$VMNAME" --storagectl "SATA Controller" --port 0 --device 0 --type hdd --medium "$VMDISK" > /dev/null
 
-        echo "VM $VMNAME créée avec $RAM Mo RAM et disque $DISK Mo"
+        echo "VM $VMNAME créée avec $RAM Mo RAM et disque $DISK Go"
         ;;
     S)
         if VBoxManage list vms | grep -q "\"$VMNAME\""; then 
