@@ -5,6 +5,7 @@ VMNAME=$2
 VMDISK="$HOME/VirtualBox VMs/$VMNAME/$VMNAME.vdi"
 USER_INFO="$USER"
 DATE_INFO=$(date --iso-8601)
+TFTP_ISO="$HOME/SAE51/ISO/debian-12.12.0-amd64-netinst.iso"
 
 
 if [ $# -lt 1 ]; then
@@ -53,9 +54,13 @@ case "$ACTION" in
            echo "Erreur : impossible de créer le disque de la VM"
            exit 1
         fi
+                
+        VBoxManage storagectl "$VMNAME" --name "IDE Controller" --add ide
+        VBoxManage storageattach "$VMNAME" --storagectl "IDE Controller" --port 0 --device 0 --type dvddrive --medium "$TFTP_ISO"
+        VBoxManage modifyvm "$VMNAME" --boot1 dvd
 
         VBoxManage setextradata "$VMNAME" "date_info" "$DATE_INFO"
-        VBoxManage setextradata "$VMNAME" "user_info" "$USER_INFO"
+        VBoxManage setextradata "$VMNAME" "user_info" "$USER_INFO" 
 
         echo "VM $VMNAME créée"
         ;;
