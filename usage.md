@@ -29,3 +29,13 @@ Nous passons ensuite à l’ajout, dans le script, d’une vérification permett
 Si une machine avec ce nom existe déjà, elle sera supprimée avant la création de la nouvelle.
 
 ![]
+
+##### Etape 3
+
+Pour cette partie nous allons rajouter dans le script une gestion d'arguments.
+Nous allons avoir comme arguments:
+-L
+-N
+-S
+-D
+-A
