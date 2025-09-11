@@ -35,8 +35,12 @@ Si une machine avec ce nom existe déjà, elle sera supprimée avant la créatio
 Pour cette partie nous allons rajouter dans le script une gestion d'arguments.
 Nous allons avoir comme arguments:
 
--L
--N
--S
--D
--A
+-L pour lister l'ensemble des machines enregistrées dans VB.
+
+-N pour ajouter une nouvelle machine.
+
+-S pour supprimer une machine.
+
+-D pour démarrer une machine 
+
+-A pour arreter une machine.
