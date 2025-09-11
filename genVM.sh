@@ -42,7 +42,7 @@ case "$ACTION" in
         echo "VM $VMNAME supprimée"
         ;;
     D)
-        VBoxManage startvm "$VMNAME" --type headless
+        VBoxManage startvm "$VMNAME" --type gui
         ;;
     A)
         VBoxManage controlvm "$VMNAME" poweroff
