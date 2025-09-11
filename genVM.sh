@@ -18,7 +18,8 @@ fi
 
 case "$ACTION" in
     L)
-        echo "Liste des VMs :" VBoxManage list vms
+        echo "Liste des VMs :" 
+        VBoxManage list vms
         ;;
     N)
 
