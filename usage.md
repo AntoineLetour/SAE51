@@ -17,8 +17,15 @@ Nous terminerons par une indication des sources utilisées pour le construire.
 
 Pour cette étape, nous avons créé un script qui permet de créer une machine virtuelle.
 Nous avons également renseigné les informations avec lesquelles nous allons configurer la VM.
+
 ![]
+
 Nous avons également ajouté, dans cette première partie du script, une pause qui nous permettra d’effectuer des vérifications.
 Une fois les vérifications terminées, le programme reprend et supprime la machine que nous venons de créer.
 
 #### Etape 2 
+
+Nous passons ensuite à l’ajout, dans le script, d’une vérification permettant d’éviter la création d’une machine portant le même nom.
+Si une machine avec ce nom existe déjà, elle sera supprimée avant la création de la nouvelle.
+
+![]
