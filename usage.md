@@ -34,6 +34,7 @@ Si une machine avec ce nom existe déjà, elle sera supprimée avant la créatio
 
 Pour cette partie nous allons rajouter dans le script une gestion d'arguments.
 Nous allons avoir comme arguments:
+
 -L
 -N
 -S
