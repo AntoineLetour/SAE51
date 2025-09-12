@@ -5,7 +5,7 @@ VMNAME=$2
 VMDISK="$HOME/VirtualBox VMs/$VMNAME/$VMNAME.vdi"
 USER_INFO="$USER"
 DATE_INFO=$(date --iso-8601)
-TFTP_ISO="$HOME/SAE51/ISO/debian-12.12.0-amd64-netinst.iso"
+TFTP_ISO="$HOME/TFTP/debian-13.1.0-amd64-netinst.iso"
 
 
 if [ $# -lt 1 ]; then
@@ -37,27 +37,34 @@ case "$ACTION" in
            exit 1
         fi
         
-        if ! VBoxManage createvm --name "$VMNAME" --ostype "Debian_64" --register > /dev/null 2>&1; then
+        if ! VBoxManage createvm --name "$VMNAME" --ostype "Debian_64" --register &> /dev/null; then
            echo "Erreur : impossible de créer la VM"
            exit 1
         fi
 
 
-        if ! VBoxManage modifyvm "$VMNAME" --memory $RAM --nic1 nat --boot1 net > /dev/null 2>&1; then
+        if ! VBoxManage modifyvm "$VMNAME" --memory $RAM --nic1 nat --boot1 net &> /dev/null; then
            echo "Erreur : impossible de créer les caractéristiques de la VM"
            exit 1
         fi
 
-        if ! VBoxManage createhd --filename "$VMDISK" --size $DISK > /dev/null 2>&1 || \
-           ! VBoxManage storagectl "$VMNAME" --name "SATA Controller" --add sata --controller IntelAhci > /dev/null 2>&1 || \
-           ! VBoxManage storageattach "$VMNAME" --storagectl "SATA Controller" --port 0 --device 0 --type hdd --medium "$VMDISK" > /dev/null 2>&1; then
+        if ! VBoxManage createhd --filename "$VMDISK" --size $DISK &> /dev/null || \
+           ! VBoxManage storagectl "$VMNAME" --name "SATA Controller" --add sata --controller IntelAhci &> /dev/null || \
+           ! VBoxManage storageattach "$VMNAME" --storagectl "SATA Controller" --port 0 --device 0 --type hdd --medium "$VMDISK" &> /dev/null; then
            echo "Erreur : impossible de créer le disque de la VM"
            exit 1
         fi
-                
-        VBoxManage storagectl "$VMNAME" --name "IDE Controller" --add ide
-        VBoxManage storageattach "$VMNAME" --storagectl "IDE Controller" --port 0 --device 0 --type dvddrive --medium "$TFTP_ISO"
-        VBoxManage modifyvm "$VMNAME" --boot1 dvd
+        
+        if mkdir -p "$HOME/TFTP"; then
+            wget -O "$HOME/TFTP/debian-13.1.0-amd64-netinst.iso" "https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-13.1.0-amd64-netinst.iso" &> /dev/null
+        fi
+
+        if ! VBoxManage storagectl "$VMNAME" --name "IDE Controller" --add ide &> /dev/null || \
+           ! VBoxManage storageattach "$VMNAME" --storagectl "IDE Controller" --port 0 --device 0 --type dvddrive --medium "$TFTP_ISO" &> /dev/null || \
+           ! VBoxManage modifyvm "$VMNAME" --boot1 dvd &> /dev/null; then
+           echo "Erreur : impossible de créer le dvd de la VM"
+           exit 1
+        fi
 
         VBoxManage setextradata "$VMNAME" "date_info" "$DATE_INFO"
         VBoxManage setextradata "$VMNAME" "user_info" "$USER_INFO" 
@@ -65,21 +72,21 @@ case "$ACTION" in
         echo "VM $VMNAME créée"
         ;;
     S)
-        if VBoxManage list vms | grep -q "\"$VMNAME\""; then 
-            VBoxManage unregistervm "$VMNAME" --delete > /dev/null
+        if VBoxManage list vms | grep -q "\"$VMNAME\"" &> /dev/null; then 
+            VBoxManage unregistervm "$VMNAME" --delete &> /dev/null
         else
             echo "VM $VMNAME supprimée"
         fi
         ;;
     D)
-        if VBoxManage startvm "$VMNAME" --type gui > /dev/null 2>&1; then
+        if VBoxManage startvm "$VMNAME" --type gui &> /dev/null; then
             echo "La VM est démarrée"
         else
             echo "Erreur : impossible de démarrer la VM"
         fi
         ;;
     A)
-        if  VBoxManage controlvm "$VMNAME" poweroff > /dev/null 2>&1; then
+        if  VBoxManage controlvm "$VMNAME" poweroff &> /dev/null; then
             echo "La VM est éteinte"
         else
             echo "Erreur : impossible de d'éteindre la VM"
