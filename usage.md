@@ -47,18 +47,18 @@ Nous allons avoir comme  **1° argument une lettre qui correspond à une action 
 
 Pour la création on demande à l'utillisateur deux arguments, comme on voit si-dessous **le premier est l'actions qui est identifié par `$1` et le nom de la VM identifié par `$2`**.
 
-![images](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code version 3/Code version 4 ex.png)
+![images](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code%20version%203/Code%20version%204%20var.png)
 
 Pour ce bout de programme on vérifie que lors du choix d'actions, l'utilisateur **renseigne bien deux arguments**, si ce n'est pas le cas cela renvoie un message d'erreur. 
 
-![images](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code version 3/Code version 4 ex.png)
+![images](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code%20version%203/Code%20version%204%20lettres.png)
 
 Le deuxième **argument des commandes N, S, D et A correspond au nom de la machine à créer ou manipuler**, avec des caractéristiques (RAM et disque dur) définies en début de script via des variables modifiables.
 
 ![images](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code%20version%203/Code%20version%204%20case.png)
  
  
-![images](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code version 3/Code version 4 ex.png)
+![images](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code%20version%203/Code%20version%204%20ex.png)
 
 Ces screens montrent que la variable **`$ACTION`** est redirigé grâce au case.
 
