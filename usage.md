@@ -26,14 +26,14 @@ Une fois les vérifications terminées, le programme reprend et supprime la mach
 #### Etape 2 
 
 Nous passons ensuite à l’ajout, dans le script, d’une vérification permettant d’éviter la création d’une machine portant le même nom.
-Si une machine avec ce nom existe déjà, elle sera supprimée avant la création de la nouvelle.
+Si une machine avec ce nom existe déjà, le programme s'arrètera marquant une erreur avant la création de la nouvelle.
 
 ![]
 
 ##### Etape 3
 
 Pour cette partie nous allons rajouter dans le script une gestion d'arguments.
-Nous allons avoir comme arguments:
+Nous allons avoir comme  1° argument une lettre qui correspond à une action de la création de la VM :
 
 -L pour lister l'ensemble des machines enregistrées dans VB.
 
@@ -44,3 +44,16 @@ Nous allons avoir comme arguments:
 -D pour démarrer une machine 
 
 -A pour arreter une machine.
+
+
+Le deuxième argument des commandes N, S, D et A correspond au nom de la machine à créer ou manipuler, avec des caractéristiques (RAM et disque dur) définies en début de script via des variables modifiables.
+
+![]
+
+###### Etape 4
+
+Vérifier dans l'interface graphique (GUI) de VirtualBox que la machine virtuelle démarre bien via le **boot PXE**.
+
+Configurer le **serveur TFTP interne à VirtualBox** afin que la machine puisse démarrer sur l’**installation d’une Debian stable (version netinst)**.  
+Pensez à **télécharger l’ISO Debian netinst** au préalable, qui servira de source pour l'installation via le réseau.
+
