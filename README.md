@@ -8,4 +8,4 @@ Cette page contient les 2 fichiers a rendre, le premier en [usage.md](https://gi
 
 ## 1- Partie Imagées
 
-Ici nous avons pour chaque partie du code les résultats en image, une version correspond à une étape: [Images](https://github.com/AntoineLetour/SAE51/tree/brMD/images)
+Ici nous avons pour chaque partie du code des images pour illustrer, une version correspond à une étape: [Images](https://github.com/AntoineLetour/SAE51/tree/brMD/images)

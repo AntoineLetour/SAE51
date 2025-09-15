@@ -13,6 +13,7 @@ Enfin, nous intégrerons dans le script des fonctionnalités permettant d'enregi
 Nous vous présenterons par la suite chacune des étapes qui nous ont permis de réaliser ce projet.
 Nous terminerons par une indication des sources utilisées pour le construire.
 
+**Remarque**: Les étapes sont effectuées différemment de celles du sujet. L'étape 3 et l'étape 4 sont inversées par rapport à celles données dans le cahier des charges. Notre étape 3 correspond à la création des arguments, et l'étape 4 est donc associée au téléchargement de l'ISO. Cela s'explique par une difficulté à réaliser notre étape 4.
 ### Etape 1
 
 Pour cette étape, nous avons créé un **script qui permet de créer une machine virtuelle**.
@@ -47,18 +48,18 @@ Nous allons avoir comme  **1° argument une lettre qui correspond à une action 
 
 Pour la création on demande à l'utillisateur deux arguments, comme on voit si-dessous **le premier est l'actions qui est identifié par `$1` et le nom de la VM identifié par `$2`**.
 
-![images](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code version 3/Code version 4 ex.png)
+![images](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code%20version%203/Code%20version%204%20var.png)
 
 Pour ce bout de programme on vérifie que lors du choix d'actions, l'utilisateur **renseigne bien deux arguments**, si ce n'est pas le cas cela renvoie un message d'erreur. 
 
-![images](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code version 3/Code version 4 ex.png)
+![images](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code%20version%203/Code%20version%204%20lettres.png)
 
 Le deuxième **argument des commandes N, S, D et A correspond au nom de la machine à créer ou manipuler**, avec des caractéristiques (RAM et disque dur) définies en début de script via des variables modifiables.
 
 ![images](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code%20version%203/Code%20version%204%20case.png)
  
  
-![images](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code version 3/Code version 4 ex.png)
+![images](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code%20version%203/Code%20version%204%20ex.png)
 
 Ces screens montrent que la variable **`$ACTION`** est redirigé grâce au case.
 
@@ -69,13 +70,27 @@ On doit vérifier, via l'interface graphique (GUI) de VirtualBox, que la machine
 On configure ensuite le **serveur TFTP interne à VirtualBox** afin que la machine puisse démarrer sur le programme d’**installation d’une Debian stable (version netinst)**.  
 On veillera à **télécharger au préalable l’image ISO de Debian netinst**, qui servira de source d’installation via le réseau: https://www.debian.org/releases/bookworm/debian-installer/
 
-![images]
+![images](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code%20version%204/Code%20version%204%20var.png)
+
+Nous avons créé un dossier `$HOME/TFTP` et y avons mis l'ISO. Si l'ISO est déjà dans le dossier, elle ne sera pas réinstallée.
+
+![images](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code%20version%204/Code%20version%204%20PXE.png)
+
+![images](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code%20version%204/Code%20version%204%20code.png)
+
+C'est grâce à cette commande que nous allons ouvrir le **serveur TFTP interne port 69**.
 
 ### Etape 5
 
 Pour finir, cette étape fut la plus compliqué a produire. On eu besoin de modifier le programme de gestion d'arguments en étape 4.
 
-![images]
+![images](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code%20version%205/Code%20version%205%20var.png)
+
+![images](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code%20version%205/Code%20version%205%20ajout%20dans%20la%20creation.png)
+
+La commande **`VBoxManage setextradata`** permet d'ajouter ou de modifier des métadonnées pour une machine virtuelle.
+
+![images](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code%20version%205/Code%20version%205%20boucle%20for.png)
 
 Pour cette étape on devait attacher des métadonnés telles que la date de création, obtenue via l’OS, et l’identité de l’utilisateur, obtenue via
 la variable d’environnement qui contient cette information. Ces informations seront donc unique à chaque VM créée et pourront être affiché avec l'argument **"L"**.
@@ -83,5 +98,13 @@ Pour faire cela on redirige la sortie de la commande `VBoxManage list vms` vers 
 Ce fichier est ensuite **analysé ligne par ligne à l’aide d’une boucle `FOR`**, en séparant les champs par les espaces.  
 On récupère le **premier champ (le nom de la machine)** pour l’utiliser avec la commande `VBoxManage getextradata` afin d'obtenir des informations associées à chaque machine virtuelle.
 
+## -Résultat 
 
+Voici un tableau qui renvoie vers une capture d'écran des résultats de certaines étapes. Toutes les étapes n'affichent pas nécessairement un résultat visible, ce qui explique l'absence d'image pour certaines d'entre elles.
+
+|  Etape                    |   Résultat          |
+|-----------------------------------|-------------| 
+| 1     | [Résultat 1](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code%20version%201/version%201%20resultat%201.png) / [Résultat 2](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code%20version%201/version%201%20resultat%202.png) |
+| 2          | [Résultat 1](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code%20version%202/version%202%20resultat%201.png) / [Résultat 2](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code%20version%202/version%202%20resultat%202.png) / [Résultat 3](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code%20version%202/version%202%20resultat%203.png) |
+| 5   | [Résultat 1](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code%20version%205/Code%20version%205%20r%C3%A9sultat.png) |
 
