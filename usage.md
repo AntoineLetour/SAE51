@@ -23,14 +23,14 @@ Nous avons également renseigné les informations avec lesquelles nous allons co
 Nous avons également ajouté, dans cette première partie du script, une **pause qui nous permettra d’effectuer des vérifications**.
 Une fois les vérifications terminées, **le programme reprend et supprime la machine que nous venons de créer**.
 
-#### Etape 2 
+### Etape 2 
 
 Nous passons ensuite à l’ajout, dans le script, d’une **vérification permettant d’éviter la création d’une machine portant le même nom**.
 Si une machine avec ce nom existe déjà, le programme s'arrètera marquant une erreur avant la création de la nouvelle.
 
 ![]
 
-##### Etape 3
+### Etape 3
 
 Pour cette partie nous allons rajouter dans le script une gestion d'arguments.
 Nous allons avoir comme  **1° argument une lettre qui correspond à une action de la création de la VM** :
@@ -50,7 +50,7 @@ Le deuxième **argument des commandes N, S, D et A correspond au nom de la machi
 
 ![]
 
-###### Etape 4
+### Etape 4
 
 On doit vérifier, via l'interface graphique (GUI) de VirtualBox, que la machine virtuelle démarre bien en utilisant le **boot PXE**.
 
@@ -59,7 +59,7 @@ On veillera à **télécharger au préalable l’image ISO de Debian netinst**, 
 
 ![]
 
-######## Etape 5
+### Etape 5
 
 Pour finir, cette étape fut la plus compliqué a produire. On eu besoin de modifier le programme de gestion d'arguments en étape 4.
 
