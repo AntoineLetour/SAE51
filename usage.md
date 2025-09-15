@@ -72,6 +72,8 @@ On veillera à **télécharger au préalable l’image ISO de Debian netinst**, 
 ![images](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code%20version%204/Code%20version%204%20var.png)
 ![images](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code%20version%204/Code%20version%204%20code.png)
 
+Les commandes vont ouvrir l'ISO Debian et copié sont contenu dans `$HOME/TFTP/` pour préparé le boot PXE puis une fois la copie créée elle se ferme.
+
 ### Etape 5
 
 Pour finir, cette étape fut la plus compliqué a produire. On eu besoin de modifier le programme de gestion d'arguments en étape 4.
