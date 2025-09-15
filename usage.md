@@ -70,6 +70,8 @@ On configure ensuite le **serveur TFTP interne à VirtualBox** afin que la machi
 On veillera à **télécharger au préalable l’image ISO de Debian netinst**, qui servira de source d’installation via le réseau: https://www.debian.org/releases/bookworm/debian-installer/
 
 ![images](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code%20version%204/Code%20version%204%20var.png)
+![images](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code%20version%204/Code%20version%204%20PXE.png)
+
 ![images](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code%20version%204/Code%20version%204%20code.png)
 
 Les commandes vont ouvrir l'ISO Debian et copié sont contenu dans `$HOME/TFTP/` pour préparé le boot PXE puis une fois la copie créée elle se ferme.
