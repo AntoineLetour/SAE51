@@ -13,8 +13,7 @@ Enfin, nous intégrerons dans le script des fonctionnalités permettant d'enregi
 Nous vous présenterons par la suite chacune des étapes qui nous ont permis de réaliser ce projet.
 Nous terminerons par une indication des sources utilisées pour le construire.
 
-**Remarque**: Les étapes sont effectuées différemment de celles du sujet. L'étape 3 et l'étape 4 sont inversées par rapport à celles données dans le cahier des charges. Cela s'explique par une difficulté à réaliser notre étape 4.
-
+**Remarque**: Les étapes sont effectuées différemment de celles du sujet. L'étape 3 et l'étape 4 sont inversées par rapport à celles données dans le cahier des charges. Notre étape 3 correspond à la création des arguments, et l'étape 4 est donc associée au téléchargement de l'ISO. Cela s'explique par une difficulté à réaliser notre étape 4.
 ### Etape 1
 
 Pour cette étape, nous avons créé un **script qui permet de créer une machine virtuelle**.
