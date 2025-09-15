@@ -75,11 +75,13 @@ On veillera à **télécharger au préalable l’image ISO de Debian netinst**, 
 
 Pour finir, cette étape fut la plus compliqué a produire. On eu besoin de modifier le programme de gestion d'arguments en étape 4.
 
-![images](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code%20version%205/Code%20version%205%20boucle%20for.png)
+![images](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code%20version%205/Code%20version%205%20var.png)
 
 ![images](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code%20version%205/Code%20version%205%20ajout%20dans%20la%20creation.png)
 
-![images](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code%20version%205/Code%20version%205%20var.png)
+La commande **`VBoxManage`** setextradata permet d'ajouter ou de modifier des métadonnées pour une machine virtuelle.
+
+![images](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code%20version%205/Code%20version%205%20boucle%20for.png)
 
 Pour cette étape on devait attacher des métadonnés telles que la date de création, obtenue via l’OS, et l’identité de l’utilisateur, obtenue via
 la variable d’environnement qui contient cette information. Ces informations seront donc unique à chaque VM créée et pourront être affiché avec l'argument **"L"**.
