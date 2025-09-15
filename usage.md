@@ -18,7 +18,7 @@ Nous terminerons par une indication des sources utilisées pour le construire.
 Pour cette étape, nous avons créé un **script qui permet de créer une machine virtuelle**.
 Nous avons également renseigné les informations avec lesquelles nous allons configurer la VM.
 
-![]
+![images](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code%20version%201/Code%20version%201.png)
 
 Nous avons également ajouté, dans cette première partie du script, une **pause qui nous permettra d’effectuer des vérifications**.
 Une fois les vérifications terminées, **le programme reprend et supprime la machine que nous venons de créer**.
@@ -28,7 +28,7 @@ Une fois les vérifications terminées, **le programme reprend et supprime la ma
 Nous passons ensuite à l’ajout, dans le script, d’une **vérification permettant d’éviter la création d’une machine portant le même nom**.
 Si une machine avec ce nom existe déjà, le programme s'arrètera marquant une erreur avant la création de la nouvelle.
 
-![]
+![images](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code%20version%202/Code%20version%202.png)
 
 ### Etape 3
 
@@ -45,10 +45,22 @@ Nous allons avoir comme  **1° argument une lettre qui correspond à une action 
 
 -A pour arreter une machine.
 
+Pour la création on demande à l'utillisateur deux arguments, comme on voit si-dessous **le premier est l'actions qui est identifié par `$1` et le nom de la VM identifié par `$2`**.
+
+![images](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code version 3/Code version 4 ex.png)
+
+Pour ce bout de programme on vérifie que lors du choix d'actions, l'utilisateur **renseigne bien deux arguments**, si ce n'est pas le cas cela renvoie un message d'erreur. 
+
+![images](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code version 3/Code version 4 ex.png)
 
 Le deuxième **argument des commandes N, S, D et A correspond au nom de la machine à créer ou manipuler**, avec des caractéristiques (RAM et disque dur) définies en début de script via des variables modifiables.
 
-![]
+![images](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code%20version%203/Code%20version%204%20case.png)
+ 
+ 
+![images](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code version 3/Code version 4 ex.png)
+
+Ces screens montrent que la variable **`$ACTION`** est redirigé grâce au case.
 
 ### Etape 4
 
@@ -57,13 +69,13 @@ On doit vérifier, via l'interface graphique (GUI) de VirtualBox, que la machine
 On configure ensuite le **serveur TFTP interne à VirtualBox** afin que la machine puisse démarrer sur le programme d’**installation d’une Debian stable (version netinst)**.  
 On veillera à **télécharger au préalable l’image ISO de Debian netinst**, qui servira de source d’installation via le réseau: https://www.debian.org/releases/bookworm/debian-installer/
 
-![]
+![images]
 
 ### Etape 5
 
 Pour finir, cette étape fut la plus compliqué a produire. On eu besoin de modifier le programme de gestion d'arguments en étape 4.
 
-![]
+![images]
 
 Pour cette étape on devait attacher des métadonnés telles que la date de création, obtenue via l’OS, et l’identité de l’utilisateur, obtenue via
 la variable d’environnement qui contient cette information. Ces informations seront donc unique à chaque VM créée et pourront être affiché avec l'argument **"L"**.
