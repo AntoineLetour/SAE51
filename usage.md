@@ -18,7 +18,7 @@ Nous terminerons par une indication des sources utilisées pour le construire.
 Pour cette étape, nous avons créé un **script qui permet de créer une machine virtuelle**.
 Nous avons également renseigné les informations avec lesquelles nous allons configurer la VM.
 
-![]
+![images](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code%20version%201/Code%20version%201.png)
 
 Nous avons également ajouté, dans cette première partie du script, une **pause qui nous permettra d’effectuer des vérifications**.
 Une fois les vérifications terminées, **le programme reprend et supprime la machine que nous venons de créer**.
