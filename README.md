@@ -9,9 +9,3 @@ Cette page contient les 2 fichiers a rendre, le premier en [usage.md](https://gi
 ## 1- Partie Imagées
 
 Ici nous avons pour chaque partie du code les résultats en image, une version correspond à une étape: [Images](https://github.com/AntoineLetour/SAE51/tree/brMD/images)
-
-|  Partie                         |   Résultat          |
-|-----------------------------------|-------------| 
-| 1     | [Résultat 1](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code%20version%201/version%201%20resultat%201.png) / [Résultat 2](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code%20version%201/version%201%20resultat%202.png) |
-| 2          | [Résultat 1](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code%20version%202/version%202%20resultat%201.png) / [Résultat 2](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code%20version%202/version%202%20resultat%202.png) / [Résultat 3](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code%20version%202/version%202%20resultat%203.png) |
-| 5   | [Résultat 1](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code%20version%205/Code%20version%205%20r%C3%A9sultat.png) |
