@@ -28,7 +28,7 @@ Une fois les vérifications terminées, **le programme reprend et supprime la ma
 Nous passons ensuite à l’ajout, dans le script, d’une **vérification permettant d’éviter la création d’une machine portant le même nom**.
 Si une machine avec ce nom existe déjà, le programme s'arrètera marquant une erreur avant la création de la nouvelle.
 
-![]
+![images](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code%20version%202/Code%20version%202.png)
 
 ### Etape 3
 
