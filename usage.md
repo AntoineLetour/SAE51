@@ -13,6 +13,8 @@ Enfin, nous intégrerons dans le script des fonctionnalités permettant d'enregi
 Nous vous présenterons par la suite chacune des étapes qui nous ont permis de réaliser ce projet.
 Nous terminerons par une indication des sources utilisées pour le construire.
 
+**Remarque**: Les étapes sont effectuées différemment de celles du sujet. L'étape 3 et l'étape 4 sont inversées par rapport à celles données dans le cahier des charges. Cela s'explique par une difficulté à réaliser notre étape 4.
+
 ### Etape 1
 
 Pour cette étape, nous avons créé un **script qui permet de créer une machine virtuelle**.
@@ -74,7 +76,7 @@ On veillera à **télécharger au préalable l’image ISO de Debian netinst**, 
 
 ![images](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code%20version%204/Code%20version%204%20code.png)
 
-Les commandes **`sudo`** vont ouvrir l'ISO Debian et copié sont contenu dans `$HOME/TFTP/` pour préparé le boot PXE, puis une fois la copie créée elle se ferme.
+C'est grâce à cette commande que nous allons ouvrir le **serveur TFTP interne port 69**.
 
 ### Etape 5
 
