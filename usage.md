@@ -69,8 +69,8 @@ On doit vérifier, via l'interface graphique (GUI) de VirtualBox, que la machine
 On configure ensuite le **serveur TFTP interne à VirtualBox** afin que la machine puisse démarrer sur le programme d’**installation d’une Debian stable (version netinst)**.  
 On veillera à **télécharger au préalable l’image ISO de Debian netinst**, qui servira de source d’installation via le réseau: https://www.debian.org/releases/bookworm/debian-installer/
 
-![images](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code%20version%204/Code%20version%204%20code.png)
 ![images](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code%20version%204/Code%20version%204%20var.png)
+![images](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code%20version%204/Code%20version%204%20code.png)
 
 ### Etape 5
 
