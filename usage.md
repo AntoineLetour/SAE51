@@ -97,7 +97,7 @@ la variable d’environnement qui contient cette information. Ces informations s
 Pour faire cela on redirige la sortie de la commande `VBoxManage list vms` vers un fichier texte.  
 Ce fichier est ensuite **analysé ligne par ligne à l’aide d’une boucle `FOR`**, en séparant les champs par les espaces.  
 On récupère le **premier champ (le nom de la machine)** pour l’utiliser avec la commande `VBoxManage getextradata` afin d'obtenir des informations associées à chaque machine virtuelle.
-Nous avons ajouté un cut (`cut -d '"' -f2`) ce qui nous permet de récupérer exclusivement le nom de la VM.
+Nous avons ajouté un cut ce qui nous permet de récupérer exclusivement le nom de la VM.
 
 
 ## -Résultat 
