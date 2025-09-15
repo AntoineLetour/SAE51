@@ -57,6 +57,8 @@ Le deuxième **argument des commandes N, S, D et A correspond au nom de la machi
 
 ![images](https://github.com/AntoineLetour/SAE51/blob/brMD/images/cd%20v4/Code%20version%204%20case.png)
 
+Ces screens montrent que la variable `$ACTION` est redirigé grâce au case. 
+ 
 ![images](https://github.com/AntoineLetour/SAE51/blob/brMD/images/cd%20v4/Code%20version%204%20ex.png)
 
 ### Etape 4
