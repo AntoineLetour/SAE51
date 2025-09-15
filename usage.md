@@ -15,17 +15,17 @@ Nous terminerons par une indication des sources utilisées pour le construire.
 
 ### Etape 1
 
-Pour cette étape, nous avons créé un script qui permet de créer une machine virtuelle.
+Pour cette étape, nous avons créé un **script qui permet de créer une machine virtuelle**.
 Nous avons également renseigné les informations avec lesquelles nous allons configurer la VM.
 
 ![]
 
-Nous avons également ajouté, dans cette première partie du script, une pause qui nous permettra d’effectuer des vérifications.
-Une fois les vérifications terminées, le programme reprend et supprime la machine que nous venons de créer.
+Nous avons également ajouté, dans cette première partie du script, une **pause qui nous permettra d’effectuer des vérifications**.
+Une fois les vérifications terminées, **le programme reprend et supprime la machine que nous venons de créer**.
 
 #### Etape 2 
 
-Nous passons ensuite à l’ajout, dans le script, d’une vérification permettant d’éviter la création d’une machine portant le même nom.
+Nous passons ensuite à l’ajout, dans le script, d’une **vérification permettant d’éviter la création d’une machine portant le même nom**.
 Si une machine avec ce nom existe déjà, le programme s'arrètera marquant une erreur avant la création de la nouvelle.
 
 ![]
@@ -46,7 +46,7 @@ Nous allons avoir comme  **1° argument une lettre qui correspond à une action 
 -A pour arreter une machine.
 
 
-Le deuxième argument des commandes N, S, D et A correspond au nom de la machine à créer ou manipuler, avec des caractéristiques (RAM et disque dur) définies en début de script via des variables modifiables.
+Le deuxième **argument des commandes N, S, D et A correspond au nom de la machine à créer ou manipuler**, avec des caractéristiques (RAM et disque dur) définies en début de script via des variables modifiables.
 
 ![]
 
@@ -59,7 +59,7 @@ On veillera à **télécharger au préalable l’image ISO de Debian netinst**, 
 
 ![]
 
-####### Etape 5
+######## Etape 5
 
 Pour finir, cette étape fut la plus compliqué a produire. On eu besoin de modifier le programme de gestion d'arguments en étape 4.
 
