@@ -55,7 +55,7 @@ Le deuxième **argument des commandes N, S, D et A correspond au nom de la machi
 On doit vérifier, via l'interface graphique (GUI) de VirtualBox, que la machine virtuelle démarre bien en utilisant le **boot PXE**.
 
 On configure ensuite le **serveur TFTP interne à VirtualBox** afin que la machine puisse démarrer sur le programme d’**installation d’une Debian stable (version netinst)**.  
-On veillera à **télécharger au préalable l’image ISO de Debian netinst**, qui servira de source d’installation via le réseau.
+On veillera à **télécharger au préalable l’image ISO de Debian netinst**, qui servira de source d’installation via le réseau: https://www.debian.org/releases/bookworm/debian-installer/
 
 ![]
 
