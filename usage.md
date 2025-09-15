@@ -79,7 +79,7 @@ Pour finir, cette étape fut la plus compliqué a produire. On eu besoin de modi
 
 ![images](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code%20version%205/Code%20version%205%20ajout%20dans%20la%20creation.png)
 
-La commande **`VBoxManage`** setextradata permet d'ajouter ou de modifier des métadonnées pour une machine virtuelle.
+La commande **`VBoxManage setextradata`** permet d'ajouter ou de modifier des métadonnées pour une machine virtuelle.
 
 ![images](https://github.com/AntoineLetour/SAE51/blob/brMD/images/code%20version%205/Code%20version%205%20boucle%20for.png)
 
