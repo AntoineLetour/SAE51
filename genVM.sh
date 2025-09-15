@@ -11,7 +11,7 @@ TFTP_ISO="$HOME/TFTP/debian-13.1.0-amd64-netinst.iso"
 if [ $# -lt 1 ]; then
     echo "  L : Lister l’ensemble des machines enregistrées"
     echo "  N : Ajouter une nouvelle machine"
-    echo "  S : Supprimer une machine"
+    echo "  S : Supprimer une machine"	
     echo "  D : Démarrer une machine"
     echo "  A : Arreter une machine"
     exit 1
@@ -23,8 +23,7 @@ case "$ACTION" in
     L)
         echo "Liste des VMs :" 
         VBoxManage list vms | while read line; do
-            VM="${line#\"}"
-            VM="${VM%%\"*}"
+            VM=$(echo "$line" | cut -d'"' -f2)
             DATE_VBOX=$(VBoxManage getextradata "$VM" "date_info" 2> /dev/null)
             USER_VBOX=$(VBoxManage getextradata "$VM" "user_info" 2> /dev/null)
             echo "$VM  ${USER_VBOX}, ${DATE_VBOX}"
@@ -41,7 +40,7 @@ case "$ACTION" in
            echo "Erreur : impossible de créer la VM"
            exit 1
         fi
-
+	
 
         if ! VBoxManage modifyvm "$VMNAME" --memory $RAM --nic1 nat --boot1 net &> /dev/null; then
            echo "Erreur : impossible de créer les caractéristiques de la VM"
@@ -54,15 +53,20 @@ case "$ACTION" in
            echo "Erreur : impossible de créer le disque de la VM"
            exit 1
         fi
-        
-        if mkdir -p "$HOME/TFTP"; then
-            wget -O "$HOME/TFTP/debian-13.1.0-amd64-netinst.iso" "https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-13.1.0-amd64-netinst.iso" &> /dev/null
+
+        mkdir -p "$HOME/TFTP"
+
+        if [ ! -f "$TFTP_ISO" ]; then
+            echo "Téléchargement de l'ISO Debian..."
+            wget -O "$TFTP_ISO" "https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-13.1.0-amd64-netinst.iso" &> /dev/null
         fi
+
+        VBoxManage modifyvm "$VMNAME" --natpf1 "tftp,tcp,,69,,69"        
 
         if ! VBoxManage storagectl "$VMNAME" --name "IDE Controller" --add ide &> /dev/null || \
            ! VBoxManage storageattach "$VMNAME" --storagectl "IDE Controller" --port 0 --device 0 --type dvddrive --medium "$TFTP_ISO" &> /dev/null || \
            ! VBoxManage modifyvm "$VMNAME" --boot1 dvd &> /dev/null; then
-           echo "Erreur : impossible de créer le dvd de la VM"
+           echo "Erreur : impossible de créer le PXE de la VM"
            exit 1
         fi
 
