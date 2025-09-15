@@ -33,7 +33,7 @@ Si une machine avec ce nom existe déjà, le programme s'arrètera marquant une 
 ##### Etape 3
 
 Pour cette partie nous allons rajouter dans le script une gestion d'arguments.
-Nous allons avoir comme  1° argument une lettre qui correspond à une action de la création de la VM :
+Nous allons avoir comme  **1° argument une lettre qui correspond à une action de la création de la VM** :
 
 -L pour lister l'ensemble des machines enregistrées dans VB.
 
@@ -52,8 +52,24 @@ Le deuxième argument des commandes N, S, D et A correspond au nom de la machine
 
 ###### Etape 4
 
-Vérifier dans l'interface graphique (GUI) de VirtualBox que la machine virtuelle démarre bien via le **boot PXE**.
+On doit vérifier, via l'interface graphique (GUI) de VirtualBox, que la machine virtuelle démarre bien en utilisant le **boot PXE**.
 
-Configurer le **serveur TFTP interne à VirtualBox** afin que la machine puisse démarrer sur l’**installation d’une Debian stable (version netinst)**.  
-Pensez à **télécharger l’ISO Debian netinst** au préalable, qui servira de source pour l'installation via le réseau.
+On configure ensuite le **serveur TFTP interne à VirtualBox** afin que la machine puisse démarrer sur le programme d’**installation d’une Debian stable (version netinst)**.  
+On veillera à **télécharger au préalable l’image ISO de Debian netinst**, qui servira de source d’installation via le réseau.
+
+![]
+
+####### Etape 5
+
+Pour finir, cette étape fut la plus compliqué a produire. On eu besoin de modifier le programme de gestion d'arguments en étape 4.
+
+![]
+
+Pour cette étape on devait attacher des métadonnés telles que la date de création, obtenue via l’OS, et l’identité de l’utilisateur, obtenue via
+la variable d’environnement qui contient cette information. Ces informations seront donc unique à chaque VM créée et pourront être affiché avec l'argument **"L"**.
+Pour faire cela on redirige la sortie de la commande `VBoxManage list vms` vers un fichier texte.  
+Ce fichier est ensuite **analysé ligne par ligne à l’aide d’une boucle `FOR`**, en séparant les champs par les espaces.  
+On récupère le **premier champ (le nom de la machine)** pour l’utiliser avec la commande `VBoxManage getextradata` afin d'obtenir des informations associées à chaque machine virtuelle.
+
+
 
